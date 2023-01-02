@@ -1,0 +1,11 @@
+<li class=" flex border p-8 items-center m-5">
+    <!-- <p class="number">{{i + 1}}</p> -->
+    <img [src]="book.url" [alt]="book.name" width="100px">
+    <div class="text-center ml-4">
+        <h4>{{book.name}}</h4>
+        <span>by {{book.author}}</span>
+        <h4 class="mb-4 font-bold text-red-500">{{book.amount | currency:'BDT'}}</h4>
+        <button class="py-2 text-white px-4 bg-purple-600" *ngIf="!isInCart" (click)="addCart()">Add To Cart</button>
+        <button class="py-2 text-white px-4 bg-red-300" *ngIf="isInCart"  (click)="removeCart()">Remove From Cart</button>
+    </div>
+</li>

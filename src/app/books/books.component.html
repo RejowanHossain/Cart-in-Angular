@@ -1,0 +1,15 @@
+<div class="flex justify-between p-4">
+    <h2>Programming Books List</h2>
+
+    <button class="bg-purple-500 py-4 px-4 text-white" (click)="handleClick()" >{{isShowing ? 'Hide Books': 'Show Books'}}</button>    
+</div>
+
+
+<div *ngIf="isShowing">
+    <ul class="flex flex-wrap">
+        <ng-container *ngFor="let book of books; let i = index">
+            <app-book [book]="book"></app-book>
+        </ng-container>
+    </ul>
+
+</div>
